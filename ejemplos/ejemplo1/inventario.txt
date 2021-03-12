@@ -1,0 +1,3 @@
+contenedor3=172.17.0.2
+contenedor1=172.17.0.3
+contenedor2=172.17.0.4

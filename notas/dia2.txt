@@ -1,0 +1,56 @@
+GIT
+-----------------------------
+git init 
+git add *                   <<< Añadir los ficheros a control de version
+git commit -m "MENSAJE"     <<< Confirma los cambios
+git branch -m "main"        <<< Crear una rama
+
+----------------------------
+git remote add "URL REMOTO" <<<< Añadiamos un repo remoto
+git push                    <<<< Mandamos la info nuestro repo local al repo remoto
+
+--------------------------------------------------------------------------------
+ANSIBLE
+playbooks.yml  <<< Que tareas hago?
+inventario.yaml inventario.ini estructura de directorios <<< Donde lo hago?
+
+Terraform ----> 
+    Maquinita 1 -> IP1
+    Maquinita 2 -> IP2
+    Maquinita 3 -> IP3
+
+Ansible 
+    Playbook (tareas)
+    Donde? 
+        Maquinita 1 -IP1
+        Maquinita 2 -IP2
+        Maquinita 3 -IP3
+
+
+
+
+Jenkins???
+    - Pipeline
+        - Trigger: 
+        Oye ! Jenkins! mira cada 10 minutillo el repo de terraform... a ver si he cambiado algo
+        Y si cambio algo: arranca la moto!!!!!
+    
+        - descargar repo donde este mis archivos .tf
+        - descargar las claves para acceso aws
+        - Crear un contenedor con una imagen que tenga dentro TERRAFORM
+        - A ese contenedor le añado un volumen compartido con los fichero de tf
+        - A ese contenedor le añado un volumen compartido con las claves tf
+        - A ese contenedor le añado un volumen compartido para la salida (outputs)
+        - terraform init 
+        - terraform validate
+        - terraform apply
+        - <<<<<<>>>>>>>><<<<<  terraform output > fichero.inventario  >>>>>>><<<<<<<<>>>>>>>
+        - Crujir el contenedor de terraform
+        - descargar repo donde este mis playbooks de ansible
+        
+        - Crear un contenedor con una imagen que tenga dentro ANSIBLE
+        - A ese contenedor le añado un volumen compartido con el inventario
+        - A ese contenedor le añado un volumen compartido con los playbooks
+        - ansible-playbook playbook.yml -i fichero-inventario 
+        - Crujir el contenedor de ANSIBLE
+        

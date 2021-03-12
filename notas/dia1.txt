@@ -87,7 +87,7 @@ Proyecto de software:
             Openshift
 Quien coordina todas las tareas automatizadas?
     Servidor de CI/CD: Jenkins, AzureDevops, AWS pipelines, gitlab CI/CD,
-                       Bamboo, Teamcity, TravisCI
+                       Bamboo, Teamcity, TravisCI, Hudson
 
 Perfil Devops: Jenkins + Ansible + Terraform + Kubernetes
 
@@ -162,3 +162,16 @@ Software (Programas):
     Demonio
     Aplicación
     Script
+    
+    
+git init   # Alta del repositorio en local
+git add *  # Añade tots los ficheros actuales al repositorio
+git commit -m "MENSAJE" # Confirmar los cambios
+git remote add origin https://github.com/IvanciniGT/formacionTerraform.git # Vincular el repo local con el remoto (GITHUB)
+git branch -M main  # Estableciendo una rama en el repo main
+git push -u origin main # Enciar los ficheros al repo central (remoto = github)
+
+-----
+git add *  
+git commit -m "MENSAJE" 
+git push -u origin main 

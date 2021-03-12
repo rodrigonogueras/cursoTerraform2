@@ -1,0 +1,52 @@
+Imagen Docker
+Contenedores Docker (3)
+
+resource null_resource nombre{
+    provisionador que cree o borre el archivo inventario
+}
+
+resource null_resource nombre{  YA TENER EL FICHERO DE INVENTARIO
+    provisionador que cree una copia del archivo inventario tras tener el fichero de inventario
+}
+
+resource null_resource nombre{   YA TENER EL FICHERO DE INVENTARIO
+
+    triggers = {
+    
+        que_no_valen_para_nada = ALGO QUE SE REFIERA AL RECURSO
+    
+    }
+
+    provisionador que llamar a ANSIBLE con el fichero de inventario
+}
+
+resource proveedor_tipo nombre{
+    for-each = SET
+    count = 6
+    
+    atributos....
+    name = each.key
+    
+    mecanismo de conexion con el recurso:
+        como? ssh, winrm
+        usuario
+        contraseña
+    
+    provisionador provisioner (local-exec)    (remote-exec)
+        Añadir en el fichero de inventario
+}
+
+remote-exec ---> comandos bash, powershell 
+
+
+Fichero de Inventario.txt
+
+
+lista?
+    [ 1, 2, 3 ]
+
+mapa?
+    { a: 1, b: 2, c: 3 }
+    
+
+values(docker_container.contenedor_nginx)[*].name
